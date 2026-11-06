@@ -1,0 +1,159 @@
+/* Exemplo 1 => Mudança de Cor */
+
+.ex1 {
+    width: 100px;
+    height: 100px;
+    background-color: lavender;
+    animation-name: mudaCor;
+    animation-duration: 4s;
+}
+
+@keyframes mudaCor{
+    from { background-color: lightblue}
+    to { background-color: darkgreen}
+}
+
+/* Exemplo 2 => Mudança de Posição */
+
+.container {
+    height: 200px;
+}
+
+.ex2 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    /* Relativo ao elemento anterior a ele. Se for 'absolute' vai considerar a pagina toda */
+    animation-name: mudaPosicao; 
+    animation-duration: 4s;
+    /* Duração da animação */
+    animation-delay: 2s;
+    /* Tempo antes do inicio da animação */
+    animation-iteration-count: infinite;
+    /* Quantas vezes a animação se repete */
+}
+
+@keyframes mudaPosicao {
+    0% { background-color: lightgreen; left: 0; top: 0; }
+    25% { background-color: lightblue; left: 100px; top: 0; }
+    50% { background-color: lightpink; left: 100px; top: 100px; }
+    75% { background-color: violet; left: 0; top: 100px; } 
+}
+
+/* Exemplo 3 => Animation-Direction */
+
+.container {
+    height: 200px;
+}
+
+.ex3_1 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: direcao;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+@keyframes direcao {
+    0% { background-color: lightgreen; left: 0; top: 0; }
+    25% { background-color: lightblue; left: 100px; top: 0; }
+    50% { background-color: lightpink; left: 100px; top: 100px; }
+    75% { background-color: violet; left: 0; top: 100px; } 
+}
+
+.ex3_2 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: direcao;
+    animation-duration: 4s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes direcao {
+    0% { background-color: lightgreen; left: 0; top: 0; }
+    25% { background-color: lightblue; left: 100px; top: 0; }
+    50% { background-color: lightpink; left: 100px; top: 100px; }
+    75% { background-color: violet; left: 0; top: 100px; } 
+}
+
+.ex3_3 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: direcao;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes direcao {
+    0% { background-color: lightgreen; left: 0; top: 0; }
+    25% { background-color: lightblue; left: 100px; top: 0; }
+    50% { background-color: lightpink; left: 100px; top: 100px; }
+    75% { background-color: violet; left: 0; top: 100px; } 
+}
+
+.ex3_4 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: direcao;
+    animation-duration: 4s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes direcao {
+    0% { background-color: lightgreen; left: 0; top: 0; }
+    25% { background-color: lightblue; left: 100px; top: 0; }
+    50% { background-color: lightpink; left: 100px; top: 100px; }
+    75% { background-color: violet; left: 0; top: 100px; } 
+}
+
+/* Exemplo 4 => Curva de Velocidade */
+
+#tipo1, #tipo2, #tipo3, #tipo4, #tipo5 {
+    width: 90px;
+    height: 30px;
+    background-color: darkolivegreen;
+    position: relative;
+    animation-name: velocidade;
+    animation-duration: 5s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+}
+
+#tipo1 {
+    animation-timing-function: linear;
+    /* Velocidade é mantida igual durante o trajeto */
+}
+
+#tipo2 {
+    animation-timing-function: ease;
+    /* Velocidade diminui durante o trajeto */
+}
+
+#tipo3 {
+    animation-timing-function: ease-in;
+    /* Velecidade menor no inicio do trajeto */
+}
+
+#tipo4 {
+    animation-timing-function: ease-out;
+    /* Velocidade menor no fim do trajeto */
+}
+
+#tipo5 {
+    animation-timing-function: ease-in-out;
+    /* Velocidade menor no inicio e no fim do trajeto */
+}
+
+@keyframes velocidade {
+    from { left: 0; }
+    to { left: 90%; }
+}

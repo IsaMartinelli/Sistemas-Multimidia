@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+/* ------------------------------------Transform------------------------------------ */
+
+img {
+    border-radius: 50%;
+    /* margin-left: 100px; modifica o que está ao redor*/
+    /* transform: translateX(150px); se aplica somente ao objeto selecionado (modifica no eixo X. Valores positivos vai para a direite, negativos para a esquerda) */
+    /* transform: translateY(150px); modifica o eixo Y (positivo para cima, negativo para baixo)*/
+    /* transform: translate(90px, -40px); modifica eixo X e Y*/
+    /* transform: scale(1.5); almenta ou diminue o tamanho (< 1 almenta , > 1 diminue */
+    /* transform: rotate(45deg); roda em sentido horário se for positivo e antihorário se for negativo. deg (rotaciona em graus) */
+    /* transform: rotate(0.25turn); rotaciona por voltas */
+    /* transform: skew(20deg); deixa a imagem em italico */
+
+    
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.border {
+    outline: 5px solid lavender;
+    padding: 10px;
+}
+
+/* --------------------------------------------Transition-------------------------------------------- */
+
+.container2 {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: lightgreen;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: seagreen;
+    /* transition-property: background-color; */
+    transition-property: border-radius, background-color;
+    /* transition-duration: 5s; */
+    transition-duration: 0.7s, 3s;
+    /* transition-delay: 2s; */
+    transition-timing-function: ease-in;
+}
+
+.square:hover {
+    background-color: darkgreen;
+    border-radius: 50%;
+}

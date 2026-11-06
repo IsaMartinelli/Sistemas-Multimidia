@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h1>Canvas</h1>
+
+    <h3>Linha</h3>
+
+        <canvas id="tela1" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+    <script>
+        let c = document.getElementById("tela1");
+        let ctx = c.getContext("2d");
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(300, 100);
+        ctx.stroke();
+    </script>
+
+    <h3>Circulo</h3>
+
+        <canvas id="tela2" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+        <script>
+            c = document.getElementById("tela2");
+            ctx = c.getContext("2d");
+
+            ctx.beginPath();
+            ctx.arc(150, 50, 40, 0, 2*Math.PI);
+            ctx.stroke();
+
+        </script>
+
+    <h3>Desenhar Texto</h3>
+
+        <canvas id="tela3" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+        <script>
+            c = document.getElementById("tela3");
+            ctx = c.getContext("2d");
+
+            ctx.font = "50px Verdana";
+            ctx.fillText("Hello World", 10, 50);
+        </script>
+
+    <h3>Texto com letras vazadas</h3>
+
+        <canvas id="tela4" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+        <script>
+            c = document.getElementById("tela4");
+            ctx = c.getContext("2d");
+
+            ctx.font = "50px Arial";
+            ctx.strokeText("Hello World", 20, 65);
+        </script>
+
+        <h3>Degrade Linear</h3>
+
+            <canvas id="tela5" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+            <script>
+                c = document.getElementById("tela5");
+                ctx = c.getContext("2d");
+                let degrade = ctx.createLinearGradient(0,0,300,0);
+
+                degrade.addColorStop(0, "crimson");
+                degrade.addColorStop(1, "darkblue");
+
+                ctx.fillStyle = degrade;
+                ctx.fillRect(10, 10, 280, 80);
+            </script>
+
+
+        <h3>Degrade circular</h3>
+
+            <canvas id="tela6" width="300" height="300" style="border: 1px solid crimson;"></canvas>
+
+            <script>
+                c = document.getElementById("tela6");
+                ctx = c.getContext("2d");
+                degrade = ctx.createRadialGradient(150,150,0, 150,150,300);
+
+                degrade.addColorStop(0, "darkblue");
+                degrade.addColorStop(1, "crimson");
+
+                ctx.fillStyle = degrade;
+                ctx.fillRect(10,10,280,280);
+            </script>
+
+        <h3>Retangulo Vazado</h3>
+
+            <canvas id="tela7" width="300" height="100" style="border: 1px solid crimson;"></canvas>
+
+            <script>
+                c = document.getElementById("tela7");
+                ctx = c.getContext("2d");
+
+                ctx.moveTo(10,10);
+                ctx.lineTo(290,10);
+                ctx.lineTo(290, 90);
+                ctx.lineTo(10, 90);
+                ctx.lineTo(10, 10);
+
+                ctx.strokeStyle = "crimson";
+                ctx.stroke();
+            </script>
+</body>
+</html>
