@@ -1,0 +1,60 @@
+.nomes {
+    height: 1cm;
+    display: flex;
+    justify-content: space-around; /* distribui os 4 nomes */
+    align-items: center;           /* centraliza na vertical */
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.ceu {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 1cm); /* tela inteira menos a faixa dos nomes */
+    overflow: hidden;
+    background-color: rgb(193, 234, 250);
+    animation-name: fundo;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+
+.astro {
+    position: absolute;
+    top: 10%; /* era 30%: menor = mais para cima */
+    width: 100px;
+    left: 100%;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.sol {
+    animation-name: passaSol;
+    mix-blend-mode: multiply; /* some com o fundo branco da imagem */
+}
+
+.lua {
+    animation-name: passaLua;
+    border-radius: 50%;
+    object-fit: cover; /* corta a imagem em círculo */
+    height: 100px;
+}
+
+@keyframes fundo {
+    0%, 45%  { background-color: rgb(175, 223, 243); }
+    55%, 95% { background-color: #06091a; }
+    100%     { background-color: rgb(191, 225, 239); }
+}
+
+@keyframes passaSol {
+    0%   { left: 100%; }
+    45%  { left: -250px; }
+    100% { left: -250px; }
+}
+
+@keyframes passaLua {
+    0%, 55% { left: 100%; }
+    95%     { left: -250px; }
+    100%    { left: -250px; }
+}
